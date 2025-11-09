@@ -96,11 +96,17 @@ export class CfxParser {
             const folder = path.join(this._outFolder, project);
             const srcFolder = path.join(folder, 'src');
             await FileUtils.mkdir(srcFolder);
+            const fileNames: string[] = [];
 
             await Promise.all(funcs.map(async (func) => {
                 const content = func.compile();
-                await writeFile(path.join(srcFolder, `${kebabCase(func.name)}.ts`), content);
+                const fileName = kebabCase(func.name) + '.ts';
+                await writeFile(path.join(srcFolder, fileName), content);
+                fileNames.push(fileName);
             }))
+
+            const index = fileNames.map(x => `export * from './${x.replace('.ts', '')}';`).join('\n');
+            await writeFile(`${srcFolder}/index.ts`, index, 'utf-8');
 
             const dtsFile = 'index.d.ts';
             const tsConfig = buildTsConfig([dtsFile]);
