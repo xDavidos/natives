@@ -5,7 +5,7 @@ apiset: server
 ## SET_PED_TO_RAGDOLL
 
 ```c
-void SET_PED_TO_RAGDOLL(Ped ped, int time1, int time2, int ragdollType, BOOL p4, BOOL p5, BOOL p6);
+void SET_PED_TO_RAGDOLL(Ped ped, int minTime, int maxTime, int ragdollType, BOOL bAbortIfInjured, BOOL bAbortIfDead, BOOL bForceScriptControl);
 ```
 
 p4/p5: Unusued in TU27
@@ -17,11 +17,11 @@ p4/p5: Unusued in TU27
 **This is the server-side RPC native equivalent of the client native [SET\_PED\_TO\_RAGDOLL](?_0xAE99FB955581844A).**
 
 ## Parameters
-* **ped**: 
-* **time1**: Time(ms) Ped is in ragdoll mode; only applies to ragdoll types 0 and not 1.
-* **time2**: 
+* **ped**: The ped to ragdoll.
+* **minTime**: Time(ms) Ped is in ragdoll mode; only applies to ragdoll types 0 and not 1.
+* **maxTime**: 
 * **ragdollType**: 
-* **p4**: 
-* **p5**: 
-* **p6**: 
+* **bAbortIfInjured**: unused
+* **bAbortIfDead**: unused
+* **bForceScriptControl**: 
 

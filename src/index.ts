@@ -81,6 +81,8 @@ const parseCfx = async (outFolder: string) => {
 
     FileUtils.setReplacement('native-decls/RegisterCommand.md', 'replacements/RegisterCommand.md')
     TypeResolver.addType({ project: MODELS_PROJECT_NAME, fileName: 'command-handler.ts', folder: 'types', nativeName: 'CommandHandler', runtimeName: 'CommandHandler' }, 8);
+    FileUtils.setReplacement('native-decls/GetResourceCommands.md', 'replacements/GetResourceCommands.md')
+    TypeResolver.addType({ project: MODELS_PROJECT_NAME, fileName: 'command-handler.ts', folder: 'types', nativeName: 'ResourceCommand', runtimeName: 'ResourceCommand' }, 136);
 
     FileUtils.setReplacement('native-decls/RegisterConsoleListener.md', 'replacements/RegisterConsoleListener.md')
     TypeResolver.addType({ project: MODELS_PROJECT_NAME, fileName: 'console-listener.ts', folder: 'types', nativeName: 'ConsoleListener', runtimeName: 'ConsoleListener' }, 8);
@@ -109,6 +111,7 @@ const parseCfx = async (outFolder: string) => {
     FileUtils.setReplacement('native-decls/GetAllRopes.md', 'replacements/GetAllRopes.md')
     FileUtils.setReplacement('native-decls/GetAllVehicleModels.md', 'replacements/GetAllVehicleModels.md')
     FileUtils.setReplacement('native-decls/GetAllVehicles.md', 'replacements/GetAllVehicles.md')
+    FileUtils.setReplacement('native-decls/GetAllTrackJunctions.md', 'replacements/GetAllTrackJunctions.md')
 
     FileUtils.setReplacement('native-decls/GetGamePool.md', 'replacements/GetGamePool.md')
     TypeResolver.addType({ project: MODELS_PROJECT_NAME, fileName: 'pool-name.enum.ts', folder: 'types', nativeName: 'ePoolName', runtimeName: 'EPoolName' }, 8);
@@ -125,6 +128,17 @@ const parseCfx = async (outFolder: string) => {
     FileUtils.setReplacement('native-decls/sdk/UpdateMapdataEntity.md', 'replacements/UpdateMapdataEntity.md')
     
     FileUtils.setReplacement('native-decls/DoesEntityExist.md', 'replacements/DoesEntityExist.md')
+
+    FileUtils.setReplacement('native-decls/AddConvarChangeListener.md', 'replacements/AddConvarChangeListener.md')
+
+    FileUtils.setReplacement('native-decls/FormatStackTrace.md', 'replacements/FormatStackTrace.md')
+
+    FileUtils.setReplacement('native-decls/GetClosestTrackNodes.md', 'replacements/GetClosestTrackNodes.md')
+    TypeResolver.addType({ project: MODELS_PROJECT_NAME, fileName: 'track-node.ts', folder: 'types', nativeName: 'TrackNode', runtimeName: 'TrackNode' }, 8);
+
+    FileUtils.setReplacement('native-decls/GetEntitiesInRadius.md', 'replacements/GetEntitiesInRadius.md')
+
+    FileUtils.setReplacement('native-decls/GetVehicleDoorStatus.md', 'replacements/GetVehicleDoorStatus.md')
 
     const registerTypeAlias = (source: string, nativeName: string, runtimeName = nativeName) => {
         const type = TypeResolver.getType(source);

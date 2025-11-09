@@ -9,6 +9,7 @@ export abstract class TypeResolver {
 
     private static readonly _primitives = new Map<string, string>([
         ['int', 'number'],
+        ['uint32_t', 'number'],
         ['float', 'number'],
         ['long', 'number'],
         ['string', 'string'],
@@ -46,6 +47,7 @@ export abstract class TypeResolver {
 
     private static readonly _typeSizes = new Map<string, number>([
         ['int', 8],
+        ['uint32_t', 4],
         ['float', 8],
         ['string', 64],
         ['void', 0],

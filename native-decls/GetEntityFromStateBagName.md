@@ -7,7 +7,7 @@ apiset: shared
 ```c
 Entity GET_ENTITY_FROM_STATE_BAG_NAME(char* bagName);
 ```
-Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](?_0x5BA35AAF).
+Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](#_0x5BA35AAF).
 
 ## Parameters
 * **bagName**: An internal state bag ID from the argument to a state bag change handler.
@@ -37,7 +37,7 @@ AddStateBagChangeHandler("blockTasks", null, async (bagName, key, value /* boole
 AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
     local entity = GetEntityFromStateBagName(bagName)
     -- Whoops, we don't have a valid entity!
-    if entity === 0 then return end
+    if entity == 0 then return end
     -- We don't want to freeze the entity position if the entity collision hasn't loaded yet
     while not HasCollisionLoadedAroundEntity(entity) do
         -- The entity went out of our scope before the collision loaded

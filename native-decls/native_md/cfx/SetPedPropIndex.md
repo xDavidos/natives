@@ -17,7 +17,6 @@ This native is used to set prop variation on a ped. Components, drawables and te
 **7**: Bracelets
 List of Prop IDs
 ```cpp
-// Props
 enum eAnchorPoints
 {
 ANCHOR_HEAD = 0, // "p_head"
