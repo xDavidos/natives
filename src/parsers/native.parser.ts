@@ -61,7 +61,7 @@ export class NativeParser {
 
         const { Hash } = MdParser.parseList<{ Version: string, Hash: string }>(MdParser.parseSection('Hashes', content))[0];
 
-        let returnType = MdParser.removeTextStyle(MdParser.parseSection('Returns', content).split('\n').filter(Boolean)[0]?.split(':')[0] ?? 'void');
+        let returnType = MdParser.removeTextStyle(MdParser.parseSection('Returns', content).trim().split('\n').filter(Boolean)[0]?.split(':')[0] ?? 'void');
 
         if (returnType.startsWith('* ')) {
             returnType = returnType.substring(2);
